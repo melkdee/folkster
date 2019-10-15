@@ -1,16 +1,25 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Chewy&display=swap');
 
 body {
 	background-color: #f2f2f2;
 	background: image_url('triangle-mosaic-34.png');
 
 
+
 }
 /*TYPOGRAPHY*/
+
+.logotype {
+	font-family: 'Chewy', sans-serif;
+	text-transform: lowercase;
+	color: #9b2c49;}
 
 h1.logotype {
 	color:white;
 	text-transform: lowercase;
+	font-family: 'Chewy', sans-serif;
+	text-shadow: 0px 1px 5px #9b2c49;
 }
 
 h2.pink {
@@ -25,7 +34,9 @@ h2.pink {
 }
 
 
+
 /*ASSETS*/
+
 #mytop-nav {
 	margin-bottom: 25px;
 }
@@ -33,6 +44,7 @@ h2.pink {
 .mybrand {
 	background-color: rgba(242,85,120,1);
 	background: image_url('triangle-mosaic-mybrand.png');
+	/*box-shadow: 0px 1px 2px #999999;*/
 }
 
 .mydark {
