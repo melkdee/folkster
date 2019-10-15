@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+body {
+	background-color: #f2f2f2;
+
+}
+/*TYPOGRAPHY*/
+
 h1.logotype {
 	color:white;
 	text-transform: lowercase;
@@ -8,7 +14,49 @@ h1.logotype {
 h2.pink {
 	font-family: 'Roboto',sans-serif;
 	font-weight: medium;
-	font-size: 28pt;
+	font-size: 18pt;
 	color: rgba(242,85,120,1.0);
 }
 
+.lightweight {
+	font-weight: 300;
+}
+
+
+/*ASSETS*/
+#mytop-nav {
+	margin-bottom: 25px;
+}
+
+.mybrand {
+	background-color: rgba(242,85,120,1);
+}
+
+.mydark {
+	background-color: rgba(242,85,120,1);
+	color: white
+}
+
+.mycard {
+	padding: 20px;
+	border-radius: 13px;	
+}
+
+
+
+/*MEDIA QUERIES*/
+
+.card-columns {
+  @include media-breakpoint-only(sm) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(md) {
+    column-count: 3;
+  }
+  @include media-breakpoint-only(lg) {
+    column-count: 3;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 4;
+  }
+}

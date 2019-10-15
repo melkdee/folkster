@@ -10,6 +10,47 @@
   </head>
 
   <body>
+
+
+<!--NAV-BAR, using their method-->
+<div class="container-fluid mybrand" id="mytop-nav">
+  <div class="container">
+  <nav class="navbar navbar-toggleable-md navbar-light">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--LOGO/HOME-->
+      <a class="navbar-brand mybrand" href="#">
+        <h1 class="logotype">Folkster</h1>
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Directory</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    </div><!--/container-->
+    </div><!--/container-fluid-->
+
     <%= yield %>
+
+  <!--{MKD} FOOTER/CREDITS-->
+  <footer class="container"><hr>
+  <p class="lightweight">Folkster is an Online Directory and Database built on Rails for local folks to list services and nodes of connection | &copy; 2019 Melanie K Dee</p>
+  </footer>
+
   </body>
 </html>

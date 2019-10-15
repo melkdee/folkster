@@ -1,36 +1,23 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-	<!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Folkster</title>
-</head>
-
-<body>
-
-<!--HEADER-->
-<div class="container-fluid" style="background-color:rgba(242,85,120,1);">
-	<!--NAV-->
-	<nav class="container">
-	<h1 class="logotype">Folkster</h1>
-	</nav>
-</div>
 
 
 	<!--CONTAINER WRAPPER-->
 	<div class="container">
+		<div class="card-columns">
+	
 	<!--SHOW LISTINGS-->
 	<% @listings.each do |listing| %>
-		<div style="border:1px solid red;">
+		<div class="card mycard">
 		    <h2 class="pink"><%= listing.name %></h2>
-		    <p><%= listing.description %></p>
-		    <i><%= listing.address %></i>
+		    <p class="lightweight"><%= listing.description %></p>
+		    <small class="text-muted"><%= listing.address %></small>
+		    <!--<div class="card-footer">
+      		<small class="text-muted">#TAG01 #TAG02</small>
+    		</div>-->
 		</div>
 
-		<hr />
 	<% end %>
+
+		</div><!--/card-columns-->
 	</div><!--/container-->
 
 
@@ -40,10 +27,6 @@
 
 
 
-<!--FOOTER/CREDITS-->
-<hr>
-<h5>Folkster is an Online Directory and Database built on Rails for local folks to list services and nodes of connection | &copy; 2019 Melanie K Dee</h5>
 
-</body>
-</html>
+
 
