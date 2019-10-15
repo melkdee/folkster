@@ -1,1 +1,14 @@
 @import "bootstrap";
+
+h1.logotype {
+	color:white;
+	text-transform: lowercase;
+}
+
+h2.pink {
+	font-family: 'Roboto',sans-serif;
+	font-weight: medium;
+	font-size: 28pt;
+	color: rgba(242,85,120,1.0);
+}
+
