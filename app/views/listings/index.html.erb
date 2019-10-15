@@ -1,4 +1,36 @@
-<h1>Welcome to Melanie K Dee's Awesome Web App</h1>
-<footer>
-	<h5> (C)MELKDEE ENTERPRISES 2019 </h5>
-</footer>
+<head>
+	<title>Folkster</title>
+</head>
+
+<body>
+
+<!--HEADER-->
+<header>
+	<h1>Folkster</h1>
+</header>
+<hr>
+
+	<!--SHOW LISTINGS-->
+	<% @listings.each do |listing| %>
+		<div style="border:1px solid red;">
+		    <h2><%= listing.name %></h2>
+		    <p><%= listing.description %></p>
+		    <i><%= listing.address %></i>
+		</div>
+
+		<hr />
+	<% end %>
+
+
+
+
+
+
+
+
+<!--FOOTER/CREDITS-->
+<hr>
+<h5>Folkster is an Online Directory and Database built on Rails for local folks to list services and nodes of connection | &copy; 2019 Melanie K Dee</h5>
+
+</body>
+
