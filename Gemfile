@@ -68,6 +68,9 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.11.1'
 gem 'bootstrap', '4.0.0.alpha6'
 
+#2019-10-15, Add Pagy (pagination)
+gem 'pagy'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
