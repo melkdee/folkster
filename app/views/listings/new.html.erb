@@ -1,6 +1,13 @@
 <!--CONTAINER WRAPPER-->
 <div class="container">
 
-<h1>Enter Your Place Details</h1>
+<h1>Enter Your Listing Details</h1>
+ <%= simple_form_for @listing do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.submit 'Create' , class: 'btn btn-info' %>
+  <% end %>
+
 
 </div><!--/container-->

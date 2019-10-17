@@ -7,5 +7,6 @@ class ListingsController < ApplicationController
 
 	# 2019-10-17, "Add New Listing"
 	def new
+		@listing = Listing.new
 	end
 end

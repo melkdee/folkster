@@ -71,6 +71,9 @@ gem 'bootstrap', '4.0.0.alpha6'
 #2019-10-15, Add Pagy (pagination)
 gem 'pagy'
 
+#2019-10-17, Add simple form
+gem 'simple_form'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
