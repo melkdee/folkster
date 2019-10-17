@@ -73,6 +73,8 @@ gem 'pagy'
 
 #2019-10-17, Add simple form
 gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'awesome_print'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

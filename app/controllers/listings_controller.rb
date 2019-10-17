@@ -11,8 +11,8 @@ class ListingsController < ApplicationController
 	end
 
 	#2019-10-17, "Adding a new Listing to DATABASE"
-	def create
-		Listing.create(listing_params)
+	def create 
+		ap Listing.create(listing_params)
 		redirect_to root_path
 	end
 
