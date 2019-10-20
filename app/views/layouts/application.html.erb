@@ -47,7 +47,18 @@
     </div><!--/container-->
     </div><!--/container-fluid-->
 
-    <%= yield %>
+    <!--CONTENT-->
+    <div class="container">
+
+    <!--ALERTS-->
+          <% if notice.present? %>
+          <p class="alert alert-info"><%= notice %></p>
+          <% end %>
+          <% if alert.present? %>
+          <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+        <%= yield %>
+    </div><!--/container-->
 
   <!--{MKD} FOOTER/CREDITS-->
   <footer class="container"><hr>
