@@ -1,20 +1,25 @@
+
+$mybrandcolor: #9b2c49;
+
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Chewy&display=swap');
 @import "font-awesome";
 
+
+
 body {
 	background-color: #f2f2f2;
-	background: image_url('triangle-mosaic-34.png');
-
-
-
+	background: image_url('triangle-mosaic-34.png');  
 }
+
+
 /*TYPOGRAPHY*/
 
 .logotype {
 	font-family: 'Chewy', sans-serif;
 	text-transform: lowercase;
-	color: #9b2c49;}
+	color: $mybrandcolor;
+	}
 
 h1.logotype {
 	color:white;

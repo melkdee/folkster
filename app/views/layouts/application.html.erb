@@ -26,13 +26,13 @@
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item home-nav active">
+            <a class="nav-link" href="<%=root_path%>">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%=new_listing_path%>"> <i class="fa fa-plus-circle"></i>New</a>
+          <li class="nav-item new-nav">
+            <a class="nav-link" href="<%=new_listing_path%>"> <i class="fa fa-plus-circle"></i> New</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item directory-nav">
             <a class="nav-link disabled" href="#">Directory</a>
           </li>
         </ul>
@@ -43,6 +43,7 @@
         </form><!-->
       </div>
     </nav>
+
     </div><!--/container-->
     </div><!--/container-fluid-->
 
@@ -53,5 +54,23 @@
   <p class="lightweight"><span class="logotype">Folkster</span> is an Online Directory and Database built on Rails for local folks to list services and nodes of connection | &copy; 2019 Melanie K Dee</p>
   </footer>
 
+
+<!--/JS-->
+<script>
+  var path = window.location.pathname
+  console.log(path)
+  $('.nav-item').removeClass("active");
+
+  if (path === '/'){
+    $(".home-nav").addClass("active");  
+  } else if (path === '/listings/new') {
+    $(".new-nav").addClass("active");
+  }
+  
+</script>
+
   </body>
 </html>
+
+
+

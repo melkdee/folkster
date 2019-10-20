@@ -69,7 +69,7 @@ gem 'popper_js', '~> 1.11.1'
 gem 'bootstrap', '4.0.0.alpha6'
 
 #2019-10-15, Add Pagy (pagination)
-gem 'pagy'
+gem 'pagy' 
 
 #2019-10-17, Add simple form
 gem 'simple_form'
