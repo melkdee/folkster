@@ -1,4 +1,8 @@
 class ListingsController < ApplicationController
+	#2019-10-22; Restrict actions to logged in users
+	before_action :authenticate_user!, only: [:new, :create]
+	
+	#2019-10-10; add pagination
 	include Pagy::Backend
 
 	def index
@@ -12,7 +16,7 @@ class ListingsController < ApplicationController
 
 	#2019-10-17, "Adding a new Listing to DATABASE"
 	def create 
-		ap Listing.create(listing_params)
+		current_user.listings.create(listing_params)
 		redirect_to root_path
 	end
 
