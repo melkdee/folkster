@@ -20,6 +20,11 @@ class ListingsController < ApplicationController
 		redirect_to root_path
 	end
 
+	#2019-10-23, "Add the Listing details page"
+	def show
+		@listing = Listing.find(params[:id])
+	end
+
 	private
 
 	def listing_params

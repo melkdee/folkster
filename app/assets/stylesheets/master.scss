@@ -48,7 +48,8 @@ h2.pink {
 }
 
 .mybrand {
-	background-color: rgba(242,85,120,1);
+	background-color: $mybrandcolor;
+	// background-color: rgba(242,85,120,1);
 	background: image_url('triangle-mosaic-mybrand.png');
 	/*box-shadow: 0px 1px 2px #999999;*/
 }
@@ -62,6 +63,12 @@ h2.pink {
 	padding: 20px;
 	border-radius: 13px;	
 }
+
+.mycard.style2 {
+	background: image_url('triangle-mosaic-mybrand.png');
+}
+
+
 
 
 

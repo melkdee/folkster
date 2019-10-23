@@ -12,6 +12,7 @@
 	<% @listings.each do |listing| %>
 		<div class="card mycard">
 		    <h2 class="pink"><%= listing.name %></h2>
+		    <h4><%= link_to listing.name, listing_path(listing) %></h4><br />
 		    <p class="lightweight"><%= listing.description %></p>
 		    <small class="text-muted"><%= listing.address %></small>
 		    <!--show user, if present-->
