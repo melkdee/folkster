@@ -4,4 +4,7 @@
 <i><%= @listing.address %></i>
 <br/><br/>
 <p><%= @listing.description %></p>
+  <div class="float-right">
+    <%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-primary' %>
+  </div>
 </div>

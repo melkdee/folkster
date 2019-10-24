@@ -25,6 +25,11 @@ class ListingsController < ApplicationController
 		@listing = Listing.find(params[:id])
 	end
 
+	#2019-10-24, "Add edit place page"
+	def edit
+		@listing = Listing.find(params[:id])
+	end
+
 	private
 
 	def listing_params

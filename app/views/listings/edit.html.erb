@@ -1,0 +1,8 @@
+
+<h1>Edit Your Listing Details</h1>
+ <%= simple_form_for @listing do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.submit 'Update' , class: 'btn btn-info' %>
+  <% end %>
