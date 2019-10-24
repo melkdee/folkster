@@ -30,6 +30,20 @@ class ListingsController < ApplicationController
 		@listing = Listing.find(params[:id])
 	end
 
+	#2019-10-24 Update
+	def update
+		@listing = Listing.find(params[:id])
+  		@listing.update_attributes(listing_params)
+  		redirect_to root_path
+	end
+
+	#2019-10-24 Remove ('destroy') Listing
+	def destroy
+		@listing = Listing.find(params[:id])
+  		@listing.destroy
+  		redirect_to root_path
+	end
+
 	private
 
 	def listing_params
