@@ -5,7 +5,10 @@
 <br/><br/>
 <p><%= @listing.description %></p>
   <div class="float-right">
+  	<!--SHOW ONLY IF USER is same as USER-that-created-listing-id-->
+  	 	<% if current_user && current_user == @listing.user %>
     <%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-primary' %>
     <%= link_to 'Destroy', listing_path(@listing), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
+    	<% end %>
   </div>
 </div>

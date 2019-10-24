@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 	#2019-10-22; Restrict actions to logged in users
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 	
 	#2019-10-10; add pagination
 	include Pagy::Backend
@@ -28,11 +28,21 @@ class ListingsController < ApplicationController
 	#2019-10-24, "Add edit place page"
 	def edit
 		@listing = Listing.find(params[:id])
+
+		if @listing.user != current_user
+    	return render plain: 'Not Allowed Dude', status: :forbidden
+  		end
 	end
 
 	#2019-10-24 Update
 	def update
 		@listing = Listing.find(params[:id])
+
+		#restrict to user that created listing id
+		if @listing.user != current_user
+    		return render plain: 'Not Allowed Dude', status: :forbidden
+  		end
+
   		@listing.update_attributes(listing_params)
   		redirect_to root_path
 	end
