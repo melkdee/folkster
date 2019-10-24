@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 	#2019-10-22; Restrict actions to logged in users
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 	
 	#2019-10-10; add pagination
 	include Pagy::Backend
@@ -50,6 +50,11 @@ class ListingsController < ApplicationController
 	#2019-10-24 Remove ('destroy') Listing
 	def destroy
 		@listing = Listing.find(params[:id])
+
+		 if @listing.user != current_user
+    	return render plain: 'Not Allowed Man', status: :forbidden
+  			end
+  			
   		@listing.destroy
   		redirect_to root_path
 	end
