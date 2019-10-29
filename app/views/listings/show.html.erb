@@ -1,9 +1,43 @@
 
+
 <div class="card mycard">
 <h1><%= @listing .name %></h1>
 <i><%= @listing.address %></i>
 <br/><br/>
 <p><%= @listing.description %></p>
+
+<!--Show Maps-->
+<!--GOOGLE MAP SCRIPT-->
+<!--check to see if lat/long exist-->
+<% if @listing.latitude.present? && @listing.longitude.present? %>
+    <script>
+      function initMap() {
+        var myLatLng = {lat: <%= @listing.latitude %>, lng: <%= @listing.longitude %>};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GEOCODER_API_KEY']%>&callback=initMap">
+    </script>
+
+    <!--Display Map-->
+    <div id="map"></div>
+ 
+    <!--end argument-->
+    <% end %>
+
+
+   <!--EDIT FUNCTIONS--> 
   <div class="float-right">
   	<!--SHOW ONLY IF USER is same as USER-that-created-listing-id-->
   	 	<% if current_user && current_user == @listing.user %>
@@ -11,4 +45,6 @@
     <%= link_to 'Destroy', listing_path(@listing), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
     	<% end %>
   </div>
-</div>
+</div><!--/mycard-->
+
+
