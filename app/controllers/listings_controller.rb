@@ -16,8 +16,12 @@ class ListingsController < ApplicationController
 
 	#2019-10-17, "Adding a new Listing to DATABASE"
 	def create 
-		current_user.listings.create(listing_params)
+		@listing = current_user.listings.create(listing_params)
+		if @listing.valid?
 		redirect_to root_path
+		else
+		render :new, status: :unprocessable_entity
+		end
 	end
 
 	#2019-10-23, "Add the Listing details page"
@@ -44,7 +48,11 @@ class ListingsController < ApplicationController
   		end
 
   		@listing.update_attributes(listing_params)
-  		redirect_to root_path
+  			if @listing.valid?
+  				redirect_to root_path
+  			else
+  				render :edit, status: :unprocessable_entity
+  			end
 	end
 
 	#2019-10-24 Remove ('destroy') Listing
@@ -54,7 +62,7 @@ class ListingsController < ApplicationController
 		 if @listing.user != current_user
     	return render plain: 'Not Allowed Man', status: :forbidden
   			end
-  			
+
   		@listing.destroy
   		redirect_to root_path
 	end

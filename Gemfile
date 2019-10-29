@@ -79,6 +79,12 @@ gem 'awesome_print'
 #2019-10-20, Add Devise (user accounts)
 gem 'devise'
 
+#2019-10-26
+gem 'geocoder'
+
+#2019-10-29
+gem "figaro"
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
