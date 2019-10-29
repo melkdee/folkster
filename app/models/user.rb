@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # Create associations
   has_many :listings
+  has_many :comments
 end
