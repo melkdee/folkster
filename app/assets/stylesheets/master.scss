@@ -12,8 +12,16 @@ body {
 	background: image_url('triangle-mosaic-34.png');  
 }
 
+/*Resets*/
+.clear {
+    clear: both;
+}
 
 /*TYPOGRAPHY*/
+
+h2, h3, h4 {
+	color: rgba(242,85,120,1.0);
+}
 
 .logotype {
 	font-family: 'Chewy', sans-serif;
@@ -48,7 +56,7 @@ h2.pink {
 }
 
 
-/*ASSETS*/
+/*BRAND ASSETS*/
 
 #mytop-nav {
 	margin-bottom: 25px;
