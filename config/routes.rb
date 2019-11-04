@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   	#FAQ: This is how our app knows where to go to find/display info
   	#IN THIS CASE: app>views> [listings;index]
   root 'listings#index'
-  resources :listings
+  resources :listings do
+  	resources :comments, only: :create
+  end
 end
