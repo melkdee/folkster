@@ -1,5 +1,6 @@
 
 $mybrandcolor: #9b2c49;
+$mygrey: #ECF8F8;
 
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Chewy&display=swap');
@@ -45,6 +46,11 @@ h2.pink {
 
 .lightweight {
 	font-weight: 300;
+}
+
+blockquote {
+	background-color: $mygrey;
+	padding: 1em;
 }
 
 /*DEFAULT: ERROR MESSAGE;*/
