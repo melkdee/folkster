@@ -85,6 +85,9 @@ gem 'geocoder'
 #2019-10-29
 gem "figaro"
 
+#2019-11-05
+gem 'carrierwave'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end

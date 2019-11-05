@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
 	private
 		#When calling on 'photos_params' (above) allow only 'caption..etc'
 		def photo_params
-			params.require(:photo).permit(:caption)
+			params.require(:photo).permit(:caption,:picture)
 		end
 
 

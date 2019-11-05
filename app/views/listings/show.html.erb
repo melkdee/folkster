@@ -67,6 +67,7 @@
 <h4>Add a photo yo</h4>
 <%= simple_form_for @photo, url: listing_photos_path(@listing) do |f| %>
   <%= f.input :caption %>
+  <%= f.input :picture %>
   <%= f.submit "Add a Photo and caption", class: 'btn btn-primary' %>
 <% end %>
 
@@ -78,6 +79,10 @@
       <div>
         <blockquote>
           <%= photo.caption %>
+          <!--SHOW IMAGE, if any-->
+        <% if photo.picture.present? %>
+        <%= image_tag photo.picture.url, class: "listingphoto"%>
+          <% end %>
         </blockquote>
       </div>
     <% end %>
