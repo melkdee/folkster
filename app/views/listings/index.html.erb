@@ -20,7 +20,21 @@
       		<small class="text-muted"><i class="fa fa-user"></i>
       		[SEE NOMSTER LESSON 18 to use] </small>
     		</div>-->
-		</div>
+
+    		<!--show comments, if any-->
+    		<% if listing.comments.present? %>
+		  
+		      <blockquote>
+		        <% if listing.comments.last.humanized_rating.present? %>
+		          <b><%= listing.comments.last.humanized_rating %></b> -
+		        <% end %>
+		        <%= listing.comments.last.message %>
+		        <small><%= listing.comments.last.user.email %></small>
+		      </blockquote>
+		  
+		    <% end %>
+
+		</div><!--/card-->
 
 	<% end %>
 
