@@ -6,4 +6,5 @@ class User < ApplicationRecord
   # Create associations
   has_many :listings
   has_many :comments
+  # has_many :photos
 end

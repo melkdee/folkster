@@ -26,9 +26,11 @@ class ListingsController < ApplicationController
 
 	#2019-10-23, "Add the Listing details page" (@listing)
 	#2019-11-04, "Add ability to comment"
+	#2019-11-05 "Allow photo uploads"
 	def show
 		@listing = Listing.find(params[:id])
 		@comment = Comment.new
+		@photo = Photo.new
 	end
 
 	#2019-10-24, "Add edit place page"

@@ -63,6 +63,25 @@
       </div>
     <% end %>
 
+<!--ALLOW PHOTOS TO UPLOADED-->
+<h4>Add a photo yo</h4>
+<%= simple_form_for @photo, url: listing_photos_path(@listing) do |f| %>
+  <%= f.input :caption %>
+  <%= f.submit "Add a Photo and caption", class: 'btn btn-primary' %>
+<% end %>
+
+    <!--SHOW PHOTO (CAPTIONS) uploaded-->
+    <br>
+    <h4>View Submitted Photos</h4>
+
+    <% @listing.photos.each do |photo| %>
+      <div>
+        <blockquote>
+          <%= photo.caption %>
+        </blockquote>
+      </div>
+    <% end %>
+
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
