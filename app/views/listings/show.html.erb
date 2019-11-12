@@ -47,10 +47,42 @@
     <!--end argument-->
     <% end %>
 
-    <br><br>
-    <!--PUBLIC FEEDBACK-->
-    <h4>Local Feedback</h4>
+    
+  <!--COMMENTS-->
+    <h4 class="section-title">Feedback</h4>
 
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+    Add Feedback
+    </button>
+    <!--/clearfix-->
+    <div class="clear"></div>
+    <!--POP UP MODULE-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Leave Feedback</h4>
+          </div>
+          <div class="modal-body">
+          <%= simple_form_for @comment, url: listing_comments_path(@listing) do |f| %>
+          <%= f.input :message %>
+          <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+             <% end %>
+          </div>
+        </div>
+      </div>
+    </div><!--/POP-UP MODULE-->
+
+    <!--LIST ALL SUBMITTED FEEDBACK-->
     <% @listing.comments.each do |comment| %>
       <div>
         <blockquote>
@@ -63,8 +95,42 @@
       </div>
     <% end %>
 
+
+<!--PHOTOS POP-UP MODULE-->
+<!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myPhotoModal">
+    Submit Photos
+    </button>
+    <!--/clearfix-->
+    <div class="clear"></div>
+    <!--POP UP MODULE-->
+    <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myPhotoModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myPhotoModalLabel">Submit Photos</h4>
+          </div>
+          <div class="modal-body">
+         <%= simple_form_for @photo, url: listing_photos_path(@listing) do |f| %>
+        <%= f.input :caption %>
+        <%= f.input :picture %>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <%= f.submit "Submit", class: 'btn btn-primary' %>
+             <% end %>
+          </div>
+        </div>
+      </div>
+    </div><!--/POP-UP MODULE-->
+
+
 <!--ALLOW PHOTOS TO UPLOADED-->
-<h4>Add a photo yo</h4>
+<h4 class="section-title">Related Photos</h4>
 <%= simple_form_for @photo, url: listing_photos_path(@listing) do |f| %>
   <%= f.input :caption %>
   <%= f.input :picture %>
@@ -72,56 +138,25 @@
 <% end %>
 
     <!--SHOW PHOTO (CAPTIONS) uploaded-->
-    <br>
-    <h4>View Submitted Photos</h4>
+    <div class="container" style="background-color:grey">
+    <h4 class="section-title">Photos Shared by Others:</h4>
+
+    
+
+
 
     <% @listing.photos.each do |photo| %>
-      <div>
-        <blockquote>
-          <%= photo.caption %>
-          <!--SHOW IMAGE, if any-->
-        <% if photo.picture.present? %>
-        <%= image_tag photo.picture.url, class: "listingphoto"%>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag photo.picture.url, class: "card-img-top"%>
+        <div class="card-body">
+          <p class="card-text"><%= photo.caption %></p>
           <% end %>
-        </blockquote>
-      </div>
-    <% end %>
+        </div><!--/card-body-->
+      </div><!--/card-->
+  </div><!--/container-->
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
-  Add Feedback
-</button>
 
-<div class="clear"></div>
-
-
-  <!--POP UP MODULE-->
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Leave Feedback</h4>
-        </div>
-        <div class="modal-body">
-        <%= simple_form_for @comment, url: listing_comments_path(@listing) do |f| %>
-        <%= f.input :message %>
-        <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-           <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
-           <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 <!-- </div>/mycard (page wrap)-->
